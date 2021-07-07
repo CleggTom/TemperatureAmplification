@@ -4,7 +4,7 @@ This repository contains the code and data for the analysis in:
 
 **Francisca C. García1†, Tom Clegg, Daniel Barrios O’Neill, Ruth Warfield, Samraat Pawar, Gabriel Yvon-Durocher** (2021) Species interactions amplify the temperature dependence of microbial community respiration.
 
-files in the code directory used for analysis are:
+Files in the code directory used for analysis are:
 
 • `Theory_simuliations.ipynb` - Jupyter notebook containing `julia` code to derive analyitical results and run simulations. To download required packages open julia, activate the environment in `TemperatureAmplification` by typing `]` and then `activate .`. Then, download the packages with `instantiate`
 
