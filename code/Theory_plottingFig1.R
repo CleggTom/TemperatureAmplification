@@ -4,7 +4,7 @@ library(magick)
 
 #read in data
 R = read_csv("./data/theory/R.csv", col_types = cols(), col_names = c("Competition","Neutral","Facilitation")) %>%
-    mutate(T = seq(5,25,length.out = 24)) %>%
+    mutate(T = seq(5,25,by = 0.5)) %>%
     pivot_longer(-T,names_to = "Interaction", values_to = "Respiration")
 
 ER = read_csv("./data/theory/ER.csv", col_types = cols(), col_names = c("E")) %>%
@@ -24,8 +24,7 @@ E_plot <- ggplot(ER,aes(x = Interaction, y = E, color = Interaction))+
     scale_x_discrete(breaks = c("Competition","Neutral","Facilitation"), labels = E_x_ticks) +
     theme_cowplot()+
     theme(legend.position = "none", text = element_text(size = 20))+
-    ylim(0.75, 2.0)
-
+    ylim(min(ER$E)-0.1, max(ER$E)+0.1)
 #plot R
 R_plot <- ggplot(R,aes(x=T, y = log(Respiration), group = Interaction, color = Interaction)) +
     geom_line()+
@@ -33,8 +32,8 @@ R_plot <- ggplot(R,aes(x=T, y = log(Respiration), group = Interaction, color = I
     theme_cowplot()+
     xlab("Temperature (°C)")+
     ylab(expression(paste("Ecosystem Respiraion ", bgroup("(",log(italic(R[eco])),")") )))+
-    theme(text = element_text(size = 20),legend.position = c(0.6,0.3),legend.title = element_blank(), plot.margin = margin(0,0,0,0))+
-    annotation_custom(ggplotGrob(E_plot),xmin = 5, xmax= 18, ymin = 2.5, ymax = 7)
+    theme(text = element_text(size = 20),legend.position = c(0.5,0.25),legend.title = element_blank(), plot.margin = margin(0,0,0,0))+
+    annotation_custom(ggplotGrob(E_plot),xmin = 5, xmax= 18, ymin = 1, ymax = 5)
 
 #Plot temperature
 Temp_diagram <- image_read_svg("./plots/Fig_1b.svg")
