@@ -19,21 +19,21 @@ E_x_ticks <- c(expression(italic(bar(a) < 0)),expression(italic(bar(a) == 0)),ex
 
 E_plot <- ggplot(ER,aes(x = Interaction, y = E, color = Interaction))+
     geom_point(size = 3) +
-    ylab(expression(paste(italic(E[eco])," (Ev)"))) +
+    ylab(expression(paste("Effective ", italic(E[eco])," (Ev)"))) +
     scale_color_manual(values = cols) +
     scale_x_discrete(breaks = c("Competition","Neutral","Facilitation"), labels = E_x_ticks) +
     theme_cowplot()+
-    theme(legend.position = "none", text = element_text(size = 20))+
+    theme(legend.position = "none", text = element_text(size = 15))+
     ylim(min(ER$E)-0.1, max(ER$E)+0.1)
 #plot R
 R_plot <- ggplot(R,aes(x=T, y = log(Respiration), group = Interaction, color = Interaction)) +
-    geom_line()+
+    geom_line(size = 1.5)+
     scale_color_manual(values = cols) +
     theme_cowplot()+
     xlab("Temperature (°C)")+
     ylab(expression(paste("Ecosystem Respiraion ", bgroup("(",log(italic(R[eco])),")") )))+
     theme(text = element_text(size = 20),legend.position = c(0.5,0.25),legend.title = element_blank(), plot.margin = margin(0,0,0,0))+
-    annotation_custom(ggplotGrob(E_plot),xmin = 5, xmax= 18, ymin = 1, ymax = 5)
+    annotation_custom(ggplotGrob(E_plot),xmin = 5, xmax= 18, ymin = 2, ymax = 6)
 
 #Plot temperature
 Temp_diagram <- image_read_svg("./plots/Fig_1b.svg")

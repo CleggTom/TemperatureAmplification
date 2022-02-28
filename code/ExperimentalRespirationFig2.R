@@ -103,6 +103,9 @@ Id <- row.names(Coef)
 aa <- strsplit(Id," ")
 Coef$Sps <- c(sapply(aa, "[",1))
 Coef$Treatment<- c(sapply(aa, "[",2))
+
+write.csv( Coef, "./data/Resp_E_ind.csv")
+
 #pdf('growth_rate_tdep_parms.pdf', 10, 7)
 ##### temperature dependence plot
 sp_grp$T <- sp_grp$K-273.15
