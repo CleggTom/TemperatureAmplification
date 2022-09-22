@@ -1,8 +1,10 @@
 # Species interactions amplify the temperature dependence of microbial community respiration
 
+[![DOI](https://zenodo.org/badge/383492507.svg)](https://zenodo.org/badge/latestdoi/383492507)
+
 This repository contains the code and data for the analysis in:
 
-**Francisca C. García1†, Tom Clegg, Daniel Barrios O’Neill, Ruth Warfield, Samraat Pawar, Gabriel Yvon-Durocher** (2021) Species interactions amplify the temperature dependence of microbial community respiration.
+**Francisca C. García1†, Tom Clegg, Daniel Barrios O’Neill, Ruth Warfield, Samraat Pawar, Gabriel Yvon-Durocher** (2022) Species interactions amplify the temperature dependence of microbial community respiration.
 
 Files in the code directory used for analysis are:
 
@@ -17,3 +19,4 @@ Files in the code directory used for analysis are:
 • `ExperimentalKSpsFigS1.R` - R script to analyse and plot species level K.
 
 • `ExperimentalKComFig3bTable2.R` - R script to analyse and plot communtiy level K.
+
