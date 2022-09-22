@@ -44,7 +44,7 @@ anova(mm, mm2)
 
 qplot(TreatmentID, K, data = MatrizData, 
       geom= "boxplot",  fill = TreatmentID)+
- scale_fill_manual(values = c('red', 'black'), labels = c('de novo', 'adapted'))+
+ scale_fill_manual(values = c('red', 'black'), labels = c('de novo', 'co-evolved'))+
     facet_wrap(~Media,ncol = 2, strip.position = "top")+
        theme(strip.background = element_blank(), strip.placement = "inside")+
     xlab("Treatment")+

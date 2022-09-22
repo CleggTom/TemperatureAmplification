@@ -1,6 +1,6 @@
 
 ## This code generate figure 2 using respiration data to be submitted to the journal. WIth  3 panels sps, com M9 and com SM. Boxplot are included within the respiration curves plot. This includes the analysis for species using nlme. This code also contains analyses included in Extended data Table 4&5
-## Final check 20/08/22
+
 
 library(data.table)
 library(plyr)

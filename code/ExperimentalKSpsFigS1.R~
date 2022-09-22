@@ -1,5 +1,5 @@
 ## Code analysis K taxon level Extended data Fig 1 and table 1
-## Revised 20/08/22
+
 library("date")
 library("ggplot2")
 library("gridExtra")
@@ -36,7 +36,7 @@ MatrizSps$TreatmentID <- factor(MatrizSps$TreatmentID, levels = c('NE','E'))
 a <- qplot(TreatmentID, K, data = MatrizSps, 
       geom= "boxplot")+
      ## annotate("text", label = c("a"), y = 0.4, x = 0.6, size = 8)+ 
-    scale_x_discrete(labels = c('ancestral', 'adapted')) +
+    scale_x_discrete(labels = c('ancestral', 'coevolved')) +
     theme_bw()+
     theme(strip.background = element_blank(), strip.text.x = element_blank(),panel.grid.minor = element_blank(),panel.grid.major = element_blank()) +
     xlab("Treatment")+
